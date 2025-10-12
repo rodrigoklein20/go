@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+//Função para gerar secret key, rodar uma vez e copiar o valor gerado para o .env
 // func init() {
 // 	chave := make([]byte, 64)
 
@@ -22,8 +23,6 @@ import (
 func main() {
 	config.Carregar()
 	r := router.Gerar()
-
-	fmt.Println(config.SecretKey)
 
 	fmt.Printf("Escutando na porta: %d", config.Porta)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", config.Porta), r))
