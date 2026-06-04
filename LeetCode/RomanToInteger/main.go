@@ -1,10 +1,6 @@
 package main
 
 // 13. Roman to Integer
-// Easy
-// Topics
-// premium lock icon
-// Companies
 // Hint
 // Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
