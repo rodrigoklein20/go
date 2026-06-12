@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"strconv"
 )
 
@@ -59,5 +60,6 @@ func main() {
 	//fmt.Println(twoSums(array, 0))
 
 	//Desafio 2
-	fmt.Println(isPalindrome(-18855881))
+	param := 121
+	log.Printf("\n%d é palindromo? %t", param, isPalindrome(param))
 }

@@ -9,7 +9,7 @@ func main() {
 
 	log.Printf("Quantidade restante: %d", removeElement([]int{3, 2, 2, 3}, 3))
 
-	log.Printf("Quantidade restante: %d", removeElement([]int{0, 1, 2, 2, 3, 0, 4, 2}, 2))
+	// log.Printf("Quantidade restante: %d", removeElement([]int{0, 1, 2, 2, 3, 0, 4, 2}, 2))
 }
 
 func removeElement(nums []int, val int) int {
