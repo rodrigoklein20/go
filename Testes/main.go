@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"strconv"
 )
 
@@ -36,6 +35,39 @@ func twoSums(nums []int, target int) []int {
 	return arrayRetorno
 }
 
+func twoSum(nums []int, target int) []int {
+	// var ret []int
+	for i1, num := range nums {
+		i2 := search(nums, target-num)
+		if i2 == -1 {
+			continue
+		} else if i1 == i2 {
+			continue
+		}
+		return []int{i1, i2}
+	}
+	return []int{}
+}
+
+func search(arr []int, target int) int {
+	low := 0
+	high := len(arr) - 1
+
+	for high >= low {
+		mid := low + ((high - low) / 2)
+
+		if arr[mid] == target {
+			return mid
+		} else if arr[mid] > target {
+			high = mid - 1
+		} else {
+			low = mid + 1
+		}
+	}
+
+	return -1
+}
+
 func isPalindrome(x int) bool {
 	// Given an integer x, return true if x is a palindrome, and false otherwise.
 
@@ -56,10 +88,10 @@ func isPalindrome(x int) bool {
 
 func main() {
 	//Desafio 1
-	//array := []int{0, 4, 3, 0}
-	//fmt.Println(twoSums(array, 0))
+	array := []int{0, 4, 3, 0}
+	fmt.Println(twoSum(array, 7))
 
 	//Desafio 2
-	param := 121
-	log.Printf("\n%d é palindromo? %t", param, isPalindrome(param))
+	// param := 121
+	// log.Printf("\n%d é palindromo? %t", param, isPalindrome(param))
 }
